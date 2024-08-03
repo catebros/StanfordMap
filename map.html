@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stanford Map</title>
+<script src="map.js" defer></script>
+<style>
+    #mapframe {
+        overflow: hidden;
+        border: 10px solid #8D493A;
+        border-radius: 15px;
+        margin: 0;
+        background-color: white;
+        position: absolute;
+        margin: 0;
+    }
+
+    form {
+        float: right;
+        border: 10px solid #8D493A;
+        height: 200px;
+        width: 150px;
+        border-radius: 15px;
+        margin: 0;
+    }
+
+    #zoom input[type=button] {
+        padding: 10px;
+        border-radius: 5px;
+        width: 40px;
+        border: none;
+        background-color: #e1cdba;
+    }
+
+    #move input[type=button] {
+        padding: 10px;
+        border-radius: 5px;
+        width: 40px;
+        border: none;
+        margin: 0; 
+        background-color: #e1cdba;
+    }
+
+    #zoom input[type="button"]:hover,
+    #move input[type="button"]:hover {
+        background-color: #D0B8A8;
+    }
+
+    body {
+        margin: 30px 100px;
+        background-color: #F8EDE3;
+        padding: 0;
+    }
+
+    #zoom {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #plus, #minus {
+        margin: 10px;
+    }
+
+    #move {
+        display: grid;
+        grid-template-columns: 40px 40px 40px;
+        grid-template-rows: 40px 40px 40px;
+        margin: 10px 15px;
+    }
+
+    #up {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    #left {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    #right {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+    }
+
+    #down {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    #map{
+        position: absolute;
+        top: -100px;
+        left: -100px;
+    }
+</style>
+</head>
+<body>
+    <form id="controls">
+        <div id="zoom">
+            <input type="button" value="+" id="plus">
+            <input type="button" value="-" id="minus">
+        </div>
+
+        <div id="move">
+            <input type="button" id="up" value="^">
+            <input type="button" value="&lt" id="left">
+            <input type="button" value=">" id="right">
+            <input type="button" value="v" id="down">
+        </div>
+    </form>
+
+    <div id="mapframe">    
+        <img src="map-s.gif" id="map" alt="Stanford Map">
+    </div>
+</body>
+</html>
